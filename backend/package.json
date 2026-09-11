@@ -1,0 +1,22 @@
+{
+  "name": "sih-portal-backend",
+  "version": "1.0.0",
+  "description": "Portal for Academia-Industry Collaboration - backend API (schemes, resume analyzer proxy, roadmap integration)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["sih", "career", "schemes", "resume", "roadmap"],
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "nanoid": "^3.3.8"
+  }
+}

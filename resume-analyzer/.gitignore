@@ -1,0 +1,28 @@
+# Environment files
+.env
+**/.env
+*.env
+
+# Python virtual environment
+venv/
+backend/venv/
+**/venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Uploaded files
+backend/uploads/
+uploads/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS/editor files
+.vscode/
+.DS_Store
+desktop.ini
+Thumbs.db
