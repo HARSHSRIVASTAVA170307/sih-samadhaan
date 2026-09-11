@@ -214,11 +214,48 @@ email. The service-based architecture is ready for them without a rebuild.
 
 ---
 
-## 9. Troubleshooting
+## 9. Deployment (frontend on Vercel + backends on Render)
+
+The app is split into 3 deployable services. Vercel serves only the React
+frontend; the Express API and the Python analyzer run on Render (free tier).
+
+### 9.1 One-time fixes this repo already includes
+- Root `package.json` installs only `concurrently` → Vercel's `npm install`
+  can't find `vite`. Build command therefore installs frontend deps explicitly
+  (below). `frontend/src/services/api.js` reads `VITE_API_BASE` so the deployed
+  frontend can point at the Render backend.
+- `resume-analyzer/backend/run_server.py` binds `0.0.0.0` (needed on Render)
+  and `requirements-deploy.txt` lists its Python deps.
+
+### 9.2 Deploy the frontend (Vercel)
+1. Import the repo → Framework Preset: **Vite**, Root Directory: **frontend**
+2. Build Command: `npm install && npm run build`
+3. Output Directory: `dist`
+4. Env var: `VITE_API_BASE = https://<your-backend>.onrender.com`
+
+### 9.3 Deploy the main backend (Render → Web Service)
+- Root Directory: `backend` · Build: `npm install` · Start: `node server.js`
+- Env: `GROQ_API_KEY`, `FRONTEND_ORIGIN=https://<your-frontend>.vercel.app`,
+  `RESUME_ANALYZER_URL=https://<your-analyzer>.onrender.com`
+
+### 9.4 Deploy the resume analyzer (Render → Web Service)
+- Root Directory: `resume-analyzer/backend`
+- Build: `pip install -r requirements-deploy.txt`
+- Start: `python run_server.py` (respects Render's `PORT` env)
+- Env: `GEMINI_API_KEY`
+
+> Note: the SkillRoute roadmap engine runs *inside* the main backend via the
+> Python bridge, so the Render backend host needs Python available. If that is
+> inconvenient, the simplest working split is: frontend on Vercel + BOTH
+> Node backend and analyzer on a single Render service (or keep the full stack
+> local for the SIH demo — deployments are optional for judging).
+
+## 10. Troubleshooting
 
 | Problem | Fix |
 |---|---|
 | "resume analyzer service is not running" | Start Terminal 1 (FastAPI on :8001) |
+| Vercel: `vite: command not found` | Set Build Command to `npm install && npm run build` and Root Directory to `frontend` |
 | "GEMINI API key missing" | Add `GEMINI_API_KEY` to `resume-analyzer/backend/.env` |
 | Gemini error "no longer available to new users" | Start the analyzer with `python run_server.py` (it patches the model); or set `GEMINI_MODEL=gemini-2.5-flash` in its `.env` |
 | Roadmap error "GROQ_API_KEY is not configured" | Add `GROQ_API_KEY` to `backend/.env`, restart backend |

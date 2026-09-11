@@ -1,9 +1,13 @@
 /* API service layer — every backend call goes through here. */
 
+/* In dev, calls are relative and go through the Vite proxy.
+   In production (Vercel), set VITE_API_BASE to the Render backend URL. */
+const API_BASE = import.meta.env.VITE_API_BASE || '';
+
 async function request(path, options = {}) {
   let res;
   try {
-    res = await fetch(path, options);
+    res = await fetch(API_BASE + path, options);
   } catch {
     throw new Error(
       'Cannot reach the server. Please make sure the backend is running on port 4000.'

@@ -28,4 +28,4 @@ if __name__ == "__main__":
         port = 8001
     if port <= 0:
         port = 8001
-    uvicorn.run(app, host="127.0.0.1", port=port)
+    uvicorn.run(app, host=os.getenv("HOST", "0.0.0.0"), port=port)
