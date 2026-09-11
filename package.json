@@ -1,0 +1,17 @@
+{
+  "name": "skillsetu-sih",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SkillSetu — Portal for Academia-Industry Collaboration for Skill Mapping, Internships and Placement (SIH prototype)",
+  "scripts": {
+    "setup": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "license": "MIT"
+}

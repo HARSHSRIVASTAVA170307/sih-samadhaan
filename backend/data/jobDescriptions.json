@@ -1,0 +1,122 @@
+[
+  {
+    "id": "amazon-sde-intern",
+    "company": "Amazon",
+    "role": "Software Development Engineer (SDE) — Intern/Fresher",
+    "location": "Bengaluru / Hyderabad, India",
+    "about": "Internship or entry-level SDE role on Amazon retail, devices or AWS teams, building services that run at massive scale.",
+    "tags": ["Java", "Data Structures", "Algorithms", "OOP", "SQL", "Linux"],
+    "officialCareersLink": "https://www.amazon.jobs/en/locations/india",
+    "jobDescription": "We are hiring Software Development Engineers to work on Amazon's retail, devices and AWS platforms. The candidate should have strong fundamentals in data structures and algorithms with the ability to design and implement efficient solutions in Java, C++ or Python. Solid understanding of object-oriented programming, operating systems, DBMS and computer networks is required. Experience with SQL databases and Linux command line is expected. The engineer will write clean, testable code, participate in code reviews, debug distributed systems and collaborate with senior engineers and product managers. Familiarity with AWS services, REST APIs and version control (Git) is a plus. Candidates should demonstrate ownership, customer obsession and the ability to work in a fast-paced, ambiguous environment."
+  },
+  {
+    "id": "google-software-engineer",
+    "role": "Software Engineer, Early Career",
+    "company": "Google",
+    "location": "Bengaluru / Hyderabad, India",
+    "about": "Early-career engineering role across Google Search, Ads, Cloud or Android teams.",
+    "tags": ["C++", "Java", "Python", "Data Structures", "Algorithms", "Distributed Systems"],
+    "officialCareersLink": "https://www.google.com/about/careers/applications/",
+    "jobDescription": "Google engineers build products used by billions of people. As a software engineer in an early-career role, you will design, develop, test and maintain software across Search, Ads, YouTube, Cloud or Android. The role requires strong proficiency in at least one of C++, Java or Python, with excellent data structures and algorithms fundamentals. You should understand computer science core areas including operating systems, networking and databases, and be able to write efficient, reliable and maintainable code. Experience with distributed systems, unit testing and debugging large codebases is valuable. Candidates must show analytical problem-solving, an ability to learn new technologies quickly and collaborate effectively in a team of engineers with diverse specializations."
+  },
+  {
+    "id": "meta-frontend-engineer",
+    "company": "Meta (Facebook)",
+    "role": "Frontend Engineer — Entry Level",
+    "location": "Remote / Hyderabad, India",
+    "about": "Building user-facing products across Facebook, Instagram and WhatsApp with React.",
+    "tags": ["React", "JavaScript", "HTML", "CSS", "REST APIs", "Testing"],
+    "officialCareersLink": "https://www.metacareers.com/",
+    "jobDescription": "We are looking for frontend engineers to build user-facing experiences across Facebook, Instagram and WhatsApp. The candidate should be proficient in JavaScript, HTML5 and CSS3 with deep hands-on experience building interfaces using React. Strong understanding of component architecture, state management, REST API integration and browser performance is required. The engineer will collaborate with product designers and backend engineers, write reusable and accessible components, and ensure cross-browser and responsive behavior. Experience with testing frameworks such as Jest, ES6+, build tools like Webpack or Vite, and version control with Git is expected. Familiarity with React Native, TypeScript or GraphQL is a plus. Candidates should demonstrate strong attention to detail and product thinking."
+  },
+  {
+    "id": "microsoft-swe-intern",
+    "company": "Microsoft",
+    "role": "Software Engineer — Intern/Fresher",
+    "location": "Hyderabad / Bengaluru / Noida, India",
+    "about": "Engineering internships and entry roles across Azure, Office, Windows and AI platform teams.",
+    "tags": ["C#", "C++", "Java", "Python", "Data Structures", "Algorithms", "Azure"],
+    "officialCareersLink": "https://careers.microsoft.com/v2/global/en/search.html",
+    "jobDescription": "Microsoft IDCS India hires software engineers to work on products across Azure, Microsoft 365, Windows and AI platforms. The candidate should have strong programming fundamentals in C++, C#, Java or Python with excellent problem-solving and data structures knowledge. Understanding of object-oriented design, operating systems, databases and computer networks is essential. Engineers are expected to write production-quality code with unit tests, participate in design discussions and code reviews, and debug complex software systems. Exposure to cloud computing concepts, Azure services, REST APIs and agile development practices is a plus. We value candidates who demonstrate a growth mindset, collaboration and passion for building products used worldwide."
+  },
+  {
+    "id": "tcs-digital-ninja",
+    "company": "TCS",
+    "role": "Assistant System Engineer (Digital / Ninja)",
+    "location": "Pan India",
+    "about": "Entry-level IT services role across application development, testing and support for global clients.",
+    "tags": ["Java", "Python", "SQL", "Cloud Basics", "Git", "Agile"],
+    "officialCareersLink": "https://www.tcs.com/careers/india",
+    "jobDescription": "Tata Consultancy Services recruits fresh engineering graduates as Assistant System Engineers. The candidate should have strong programming knowledge in Java, Python or C++ with good understanding of data structures, OOP concepts and DBMS/SQL. Responsibilities include application development, unit testing, defect fixing and production support for enterprise clients across banking, retail and telecom domains. Working knowledge of software development lifecycle, Git-based version control, and agile/scrum methodology is required. Awareness of cloud platforms, DevOps tools and web technologies is preferred. Candidates must demonstrate strong communication skills, adaptability to work across technologies, willingness to work in shifts for client engagements and a commitment to continuous learning through TCS Xplore learning programs."
+  },
+  {
+    "id": "infosys-power-programmer",
+    "company": "Infosys",
+    "role": "Systems Engineer / Power Programmer",
+    "location": "Mysuru / Bengaluru / Pune, India",
+    "about": "Systems Engineer and specialist Power Programmer tracks for fresh engineering graduates.",
+    "tags": ["Java", "Python", "SQL", "Data Structures", "Cloud Basics", "Git"],
+    "officialCareersLink": "https://www.infosys.com/careers/apply.html",
+    "jobDescription": "Infosys hires engineering graduates for Systems Engineer and Power Programmer roles. The candidate should be proficient in at least one programming language such as Java, Python or JavaScript with solid understanding of data structures, algorithms and object-oriented programming. Knowledge of SQL databases, HTML/CSS, and software engineering fundamentals including SDLC, testing and version control (Git) is required. Power Programmer candidates should demonstrate advanced problem-solving and full-stack development capability across frontend and backend technologies. Responsibilities include application design, development, testing, deployment and maintenance for global enterprise clients. Exposure to cloud services, microservices, containers and automation is a plus. Strong communication, client-readiness and the ability to learn new technologies rapidly are essential."
+  },
+  {
+    "id": "wipro-turbo",
+    "company": "Wipro",
+    "role": "Project Engineer (Elite/Turbo)",
+    "location": "Pan India",
+    "about": "Elite and Turbo hiring tracks for fresh graduates across development, testing and infrastructure.",
+    "tags": ["Java", "Python", "SQL", "Web Basics", "Cloud Basics", "Git"],
+    "officialCareersLink": "https://careers.wipro.com/",
+    "jobDescription": "Wipro's Elite and Turbo hiring programs recruit fresh engineering graduates as Project Engineers. The candidate should have good programming skills in Java, Python or C with fundamentals of data structures, algorithms, OOP and DBMS. Working knowledge of SQL, web technologies (HTML, CSS, JavaScript) and the software development lifecycle is required. Responsibilities include software development, testing, implementation and support of enterprise applications, along with participation in Wipro's project-based learning and business readiness programs. Turbo candidates additionally work on advanced stacks including cloud, DevOps and full-stack development. Exposure to Git, agile practices and basic cloud concepts is preferred. Strong analytical thinking, communication skills and a service-oriented mindset are important for client-facing project work."
+  },
+  {
+    "id": "accenture-associate-software-engineer",
+    "company": "Accenture",
+    "role": "Associate Software Engineer",
+    "location": "Bengaluru / Chennai / Pune, India",
+    "about": "Technology analyst and associate software engineer roles across digital and cloud services.",
+    "tags": ["Java", "Python", "SQL", "Cloud", "Salesforce", "Git"],
+    "officialCareersLink": "https://www.accenture.com/in-en/careers",
+    "jobDescription": "Accenture recruits Associate Software Engineers to deliver technology consulting and digital transformation projects for global clients. The candidate should have programming proficiency in Java, Python or C# with understanding of OOP, data structures and SQL databases. Knowledge of software testing, SDLC and Git version control is required. Engineers work across application development, cloud services (Azure/AWS), SAP, Salesforce and testing practices, and are expected to complete Accenture's pre-training technology curriculum before deployment. Exposure to cloud platforms, low-code tools, DevOps and agile delivery is a plus. Candidates must demonstrate adaptability, strong communication skills for client interaction and commitment to learning multiple technology stacks across engagements."
+  },
+  {
+    "id": "cognizant-genc",
+    "company": "Cognizant",
+    "role": "GenC / Programmer Analyst Trainee",
+    "location": "Chennai / Bengaluru / Coimbatore, India",
+    "about": "GenC, GenC Elevate and GenC Next fresher tracks across development, testing and data.",
+    "tags": ["Java", "Python", "SQL", "Web Basics", "Cloud Basics", "Git"],
+    "officialCareersLink": "https://careers.cognizant.com/global/en",
+    "jobDescription": "Cognizant hires engineering graduates through GenC, GenC Elevate and GenC Next hiring tracks as Programmer Analyst Trainees. The candidate should have strong programming fundamentals in Java, Python or C# with knowledge of data structures, OOP and SQL. GenC Next candidates should additionally demonstrate full-stack capability across modern frameworks such as React or Angular for frontend and Spring Boot or Node.js for backend, with REST API development experience. Responsibilities include application development, unit testing, documentation and production support for global clients in banking, healthcare and retail. Understanding of SDLC, agile methodology, Git and basic cloud concepts is required. Strong communication skills, analytical thinking and willingness to upskill through Cognizant's training academies are expected."
+  },
+  {
+    "id": "capgemini-analyst",
+    "company": "Capgemini",
+    "role": "Analyst — Software Engineering",
+    "location": "Bengaluru / Pune / Hyderabad, India",
+    "about": "Analyst roles across cloud, data engineering and application services for graduates.",
+    "tags": ["Java", "Python", "SQL", "Cloud", "Data Engineering", "Git"],
+    "officialCareersLink": "https://www.capgemini.com/careers/",
+    "jobDescription": "Capgemini recruits Analysts for software engineering, cloud and data engineering engagements. The candidate should be comfortable with Java, Python or .NET along with SQL and software development fundamentals including SDLC and testing. Responsibilities include developing and maintaining applications, writing automated tests, preparing technical documentation and supporting client deployments across industries such as banking, manufacturing and energy. Working knowledge of Git, agile/scrum ceremonies and basic cloud platforms (AWS or Azure) is expected. Exposure to data engineering tools, ETL concepts, microservices and containerization (Docker, Kubernetes) is a plus. Candidates should demonstrate structured problem-solving, collaborative working across global teams and eagerness to build deep expertise in assigned technology domains."
+  },
+  {
+    "id": "zoho-member-technical",
+    "company": "Zoho",
+    "role": "Member Technical Staff",
+    "location": "Chennai / Tenkasi, India",
+    "about": "Product company roles building Zoho's suite: backend, frontend and quality engineering.",
+    "tags": ["Java", "JavaScript", "SQL", "Data Structures", "Web Development", "Linux"],
+    "officialCareersLink": "https://www.zoho.com/careers/",
+    "jobDescription": "Zoho hires Member Technical Staff candidates for product engineering across its business software suite. The candidate should have strong programming ability in Java, C, C++ or JavaScript with solid data structures and problem-solving fundamentals. Understanding of DBMS and SQL, operating systems and web technologies (HTML, CSS, JavaScript) is required. Engineers at Zoho build features end-to-end, from backend services and database design to frontend interfaces, and are expected to write efficient, maintainable code with thorough testing. Knowledge of Linux environments, REST APIs and version control is expected. Zoho values self-driven learners with strong analytical reasoning, attention to detail and the ability to work in small, autonomous product teams."
+  },
+  {
+    "id": "oracle-software-engineer",
+    "company": "Oracle",
+    "role": "Software Engineer — Campus Hire",
+    "location": "Bengaluru / Hyderabad / Noida, India",
+    "about": "Campus hires across Oracle Database, Cloud Infrastructure (OCI) and applications engineering.",
+    "tags": ["Java", "C++", "Python", "SQL", "Data Structures", "Algorithms", "Cloud"],
+    "officialCareersLink": "https://careers.oracle.com/jobs/",
+    "jobDescription": "Oracle hires campus graduates as Software Engineers across Database, Cloud Infrastructure (OCI), Fusion Applications and development teams. The candidate should have strong programming skills in Java, C++ or Python with excellent data structures and algorithms fundamentals. Solid understanding of DBMS and SQL, operating systems and computer networks is required. Responsibilities include designing, developing and testing product features, debugging complex code paths and collaborating with global engineering teams. Familiarity with cloud technologies, REST APIs, Linux, Git and automated testing frameworks is a plus. Candidates should demonstrate analytical problem-solving, attention to detail, initiative to learn Oracle's technology stack and the ability to deliver quality software in a collaborative environment."
+  }
+]

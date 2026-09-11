@@ -1,0 +1,59 @@
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Firebase
+firebase-credentials.json
+serviceAccountKey.json
+firebase_key.json
+
+# Node modules (for frontend)
+node_modules/
+.pnp
+.pnp.js
+
+# Frontend build
+frontend/dist/
+frontend/build/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
