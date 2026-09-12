@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   RouteIcon,
   SparkIcon,
@@ -15,6 +16,7 @@ import {
 } from '../components/icons.jsx';
 import { generateRoadmap, fetchClarity } from '../services/api.js';
 import { logActivity } from '../services/localStore.js';
+import { toRoadmapForm } from '../services/profile.js';
 
 const EDUCATION_OPTIONS = [
   'Class 10',
@@ -63,15 +65,20 @@ function ClarityMeter({ clarity }) {
 }
 
 function ProfileForm({ onGenerated }) {
-  const [form, setForm] = useState({
-    name: '',
-    education: 'Bachelors (B.Tech / B.E. / BSc / BCA)',
-    skills: '',
-    interests: '',
-    goals: '',
-    experience: '',
-    time_per_week: 10,
-    learning_pace: 'medium',
+  const location = useLocation();
+  const [form, setForm] = useState(() => {
+    const defaults = {
+      name: '',
+      education: 'Bachelors (B.Tech / B.E. / BSc / BCA)',
+      skills: '',
+      interests: '',
+      goals: '',
+      experience: '',
+      time_per_week: 10,
+      learning_pace: 'medium',
+    };
+    /* Arriving from the Dashboard profile card (or onboarding) — prefill */
+    return location.state?.prefill ? { ...defaults, ...toRoadmapForm() } : defaults;
   });
   const [clarity, setClarity] = useState(null);
   const [clarityAnswers, setClarityAnswers] = useState({

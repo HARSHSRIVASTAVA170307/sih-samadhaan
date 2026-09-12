@@ -25,6 +25,9 @@ frontend/dist/
 resume-analyzer/backend/uploads/
 test-resume.pdf
 
+# Runtime user store (accounts created via signup)
+backend/data/users.json
+
 # OS
 .DS_Store
 Thumbs.db

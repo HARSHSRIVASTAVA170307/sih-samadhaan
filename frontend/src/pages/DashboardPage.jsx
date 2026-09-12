@@ -13,6 +13,9 @@ import {
 } from '../components/icons.jsx';
 import { fetchHealth, fetchSchemeStats } from '../services/api.js';
 import { getActivity, getSavedSchemes, getStudentName } from '../services/localStore.js';
+import { useAuth } from '../services/auth.jsx';
+import OnboardingModal from '../components/OnboardingModal.jsx';
+import { getProfile } from '../services/profile.js';
 
 const FEATURE_CARDS = [
   {
@@ -54,7 +57,11 @@ export default function DashboardPage() {
   const [stats, setStats] = useState(null);
   const [saved, setSaved] = useState([]);
   const [activity, setActivity] = useState([]);
-  const [name] = useState(getStudentName());
+  const [profile, setProfile] = useState(getProfile);
+  const [editingProfile, setEditingProfile] = useState(false);
+  const { user } = useAuth();
+  const name =
+    user?.fullName?.trim().split(/\s+/)[0] || getStudentName() || '';
 
   useEffect(() => {
     setSaved(getSavedSchemes());
@@ -74,6 +81,13 @@ export default function DashboardPage() {
           Your personalized career hub. Analyze resumes, build skill roadmaps and
           unlock government benefits — everything below is fully functional.
         </p>
+        {user?.college && (
+          <p style={{ marginTop: 8, fontSize: 13.5, opacity: 0.85 }}>
+            {user.college}
+            {user.course ? ` · ${user.course}` : ''}
+            {user.graduationYear ? ` · Class of ${user.graduationYear}` : ''}
+          </p>
+        )}
         <div className="dash-actions">
           <Link to="/resume-analyzer" className="btn btn-primary">
             <FileScanIcon size={16} /> Analyze Resume
@@ -117,6 +131,75 @@ export default function DashboardPage() {
           </Link>
         ))}
       </div>
+
+      {/* Career profile (from onboarding) */}
+      <div className="card card-pad profile-card">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+          <div>
+            <h3 className="section-title" style={{ fontSize: 17, margin: 0 }}>
+              Career profile
+            </h3>
+            <p className="section-sub" style={{ marginTop: 4 }}>
+              Powers your dashboard personalization and pre-fills the roadmap tool.
+            </p>
+          </div>
+          <button className="btn btn-ghost btn-sm" onClick={() => setEditingProfile(true)}>
+            {profile.skills || profile.targetCareer ? 'Edit profile' : '+ Set up my profile'}
+          </button>
+        </div>
+
+        {profile.skills || profile.targetCareer || profile.interests ? (
+          <div className="profile-grid">
+            <div className="profile-item">
+              <span className="profile-label">Target career</span>
+              <span className="profile-value">
+                {profile.targetCareer || 'Not set yet'}
+              </span>
+            </div>
+            <div className="profile-item">
+              <span className="profile-label">Skills</span>
+              <span className="profile-value">{profile.skills || '—'}</span>
+            </div>
+            <div className="profile-item">
+              <span className="profile-label">Interests</span>
+              <span className="profile-value">{profile.interests || '—'}</span>
+            </div>
+            <div className="profile-item">
+              <span className="profile-label">Timeline</span>
+              <span className="profile-value">{profile.timeline || '—'}</span>
+            </div>
+          </div>
+        ) : (
+          <div className="empty-state" style={{ padding: '20px 12px 8px' }}>
+            <div className="icon">
+              <TargetIcon size={24} />
+            </div>
+            <h3>No career profile yet</h3>
+            <p>
+              Add your skills and target career — the dashboard and roadmap tool
+              will adapt to it.
+            </p>
+          </div>
+        )}
+
+        {profile.targetCareer && profile.targetCareer !== 'I am still exploring' && (
+          <div style={{ marginTop: 14 }}>
+            <Link to="/career-roadmap" state={{ prefill: true }} className="btn btn-primary btn-sm">
+              <RouteIcon size={14} /> Generate roadmap for {profile.targetCareer}
+            </Link>
+          </div>
+        )}
+      </div>
+
+      {editingProfile && (
+        <OnboardingModal
+          showSkip={false}
+          onClose={() => {
+            setProfile(getProfile());
+            setEditingProfile(false);
+          }}
+        />
+      )}
 
       {/* Progress + recent */}
       <div className="dash-two-col">

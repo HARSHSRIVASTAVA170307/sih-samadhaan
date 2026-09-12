@@ -7,7 +7,7 @@ const API_BASE = import.meta.env.VITE_API_BASE || '';
 async function request(path, options = {}) {
   let res;
   try {
-    res = await fetch(API_BASE + path, options);
+    res = await fetch(API_BASE + path, { credentials: 'include', ...options });
   } catch {
     throw new Error(
       'Cannot reach the server. Please make sure the backend is running on port 4000.'
@@ -80,6 +80,32 @@ export function generateRoadmap(profile) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(profile),
   });
+}
+
+/* ---------------- Auth (signup / login) ---------------- */
+
+export function signup(details) {
+  return request('/api/auth/signup', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(details),
+  });
+}
+
+export function login(email, password) {
+  return request('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+  });
+}
+
+export function fetchMe() {
+  return request('/api/auth/me');
+}
+
+export function logout() {
+  return request('/api/auth/logout', { method: 'POST' });
 }
 
 /* ---------------- Health ---------------- */

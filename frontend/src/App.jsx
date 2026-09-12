@@ -1,6 +1,9 @@
-import { useState } from 'react';
-import { Outlet, NavLink, Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Outlet, NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { CapIcon, MenuIcon, XIcon, ArrowRightIcon } from './components/icons.jsx';
+import { useAuth } from './services/auth.jsx';
+import OnboardingModal from './components/OnboardingModal.jsx';
+import { isOnboarded, markOnboarded, seedFromAccount } from './services/profile.js';
 
 const NAV = [
   { to: '/', label: 'Home', end: true },
@@ -14,6 +17,30 @@ const NAV = [
 export default function App() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { user, loading, logout } = useAuth();
+
+  async function handleLogout() {
+    await logout();
+    navigate('/');
+  }
+
+  /* First-visit onboarding window (once per browser) */
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  useEffect(() => {
+    if (!isOnboarded()) setShowOnboarding(true);
+  }, []);
+
+  /* Seed the career profile with account skills when a user logs in */
+  useEffect(() => {
+    if (user) seedFromAccount(user);
+  }, [user]);
+
+  function closeOnboarding(saved) {
+    setShowOnboarding(false);
+    markOnboarded(); // don't nag returning visitors
+    if (saved) navigate('/dashboard');
+  }
 
   return (
     <div className="shell">
@@ -41,12 +68,44 @@ export default function App() {
                 {item.label}
               </NavLink>
             ))}
+            {!loading && !user && (
+              <div className="nav-auth-mobile">
+                <Link to="/login" className="btn btn-ghost btn-sm" onClick={() => setOpen(false)}>
+                  Log in
+                </Link>
+                <Link to="/signup" className="btn btn-primary btn-sm" onClick={() => setOpen(false)}>
+                  Sign up
+                </Link>
+              </div>
+            )}
           </nav>
 
           <div className="nav-cta">
-            <Link to="/dashboard" className="btn btn-primary btn-sm">
-              Get Started <ArrowRightIcon size={15} />
-            </Link>
+            {loading ? (
+              <span className="nav-user-skeleton" aria-hidden="true" />
+            ) : user ? (
+              <div className="nav-user">
+                <span className="nav-avatar" title={user.email}>
+                  {user.fullName.trim().charAt(0).toUpperCase()}
+                </span>
+                <span className="nav-user-name">{user.fullName.split(/\s+/)[0]}</span>
+                <button
+                  className="btn btn-ghost btn-sm logout-btn"
+                  onClick={handleLogout}
+                >
+                  Log out
+                </button>
+              </div>
+            ) : (
+              <>
+                <Link to="/login" className="btn btn-ghost btn-sm">
+                  Log in
+                </Link>
+                <Link to="/signup" className="btn btn-primary btn-sm">
+                  Sign up <ArrowRightIcon size={15} />
+                </Link>
+              </>
+            )}
             <button
               className="nav-toggle"
               onClick={() => setOpen((v) => !v)}
@@ -101,6 +160,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {showOnboarding && <OnboardingModal onClose={closeOnboarding} />}
     </div>
   );
 }

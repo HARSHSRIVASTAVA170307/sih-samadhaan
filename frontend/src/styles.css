@@ -280,6 +280,39 @@ img, svg { display: block; }
 .field { display: flex; flex-direction: column; gap: 6px; }
 .field label { font-size: 13.5px; font-weight: 600; color: var(--ink-2); }
 .field .hint { font-size: 12.5px; color: var(--faint); }
+
+/* ---------- Auth (login / signup) ---------- */
+.auth-wrap { display: flex; justify-content: center; padding: 48px 16px 64px; }
+.auth-card { width: 100%; max-width: 480px; padding: 32px 30px; }
+.auth-head { text-align: center; margin-bottom: 18px; }
+.auth-head .auth-logo { width: 44px; height: 44px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; }
+.auth-head h1 { font-size: 22px; margin: 0 0 6px; }
+.auth-head p { color: var(--muted); font-size: 14px; margin: 0; }
+.auth-card form { display: flex; flex-direction: column; gap: 14px; margin-top: 14px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
+.auth-error {
+  background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c;
+  padding: 10px 14px; border-radius: 10px; font-size: 13.5px; margin-bottom: 4px;
+}
+.auth-more { border: 1px solid var(--line, #e5e7eb); border-radius: 12px; padding: 10px 14px; }
+.auth-more summary { font-size: 13.5px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
+.auth-more[open] summary { margin-bottom: 12px; }
+.auth-more .field { margin-top: 10px; }
+.auth-submit { width: 100%; justify-content: center; margin-top: 4px; }
+.auth-switch { text-align: center; font-size: 13.5px; color: var(--muted); margin: 16px 0 0; }
+.auth-switch a { color: var(--brand-600); font-weight: 600; }
+
+/* Navbar user area */
+.nav-auth-mobile { display: none; }
+.nav-user { display: flex; align-items: center; gap: 10px; }
+.nav-avatar {
+  width: 32px; height: 32px; border-radius: 50%; background: var(--brand-600); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
+}
+.nav-user-name { font-weight: 600; font-size: 14px; }
+@media (max-width: 720px) { .nav-user-name { display: none; } }
+.nav-user-skeleton { width: 120px; height: 32px; border-radius: 8px; background: var(--line, #e5e7eb); opacity: 0.6; }
 .input, .textarea, .select {
   width: 100%;
   border: 1px solid var(--line);
@@ -841,6 +874,25 @@ img, svg { display: block; }
 .modal-section p { font-size: 14.5px; line-height: 1.65; color: var(--ink-2); }
 .modal-footer { display: flex; gap: 10px; flex-wrap: wrap; padding: 18px 24px 24px; }
 
+/* ---------- Onboarding modal ---------- */
+.onboarding-modal { max-width: 560px; width: calc(100% - 32px); }
+.onboard-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-600); margin-bottom: 4px; }
+.onboard-sub { color: var(--muted); font-size: 14px; margin: 10px 0 12px; }
+.onboard-progress { display: flex; gap: 6px; margin: 4px 0 2px; }
+.onboard-dot { width: 34px; height: 5px; border-radius: 999px; background: var(--line-soft); transition: background 0.25s; }
+.onboard-dot.on { background: var(--brand-500); }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-col { display: flex; flex-direction: column; align-items: stretch; gap: 8px; max-height: 260px; overflow-y: auto; padding-right: 4px; }
+.chip-col .chip { display: flex; justify-content: space-between; align-items: center; text-align: left; padding: 10px 14px; }
+.chip-check { color: var(--brand-600); font-weight: 700; }
+
+/* ---------- Dashboard career profile card ---------- */
+.profile-card { margin-top: 20px; }
+.profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 16px; }
+.profile-item { background: var(--surface-2, #f8fafc); border: 1px solid var(--line-soft); border-radius: 12px; padding: 12px 14px; }
+.profile-label { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
+.profile-value { font-size: 14px; font-weight: 600; color: var(--ink-2); line-height: 1.5; word-break: break-word; }
+
 /* Company picker */
 .job-picker-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px 24px 24px; }
 .job-card {
@@ -947,7 +999,8 @@ img, svg { display: block; }
   }
   .nav-links.open { display: flex; }
   .nav-toggle { display: grid; }
-  .nav-cta .btn { display: none; }
+  .nav-cta .btn:not(.logout-btn) { display: none; }
+  .nav-auth-mobile { display: flex; gap: 10px; padding: 10px 16px 4px; }
   .dash-two-col { grid-template-columns: 1fr; }
 }
 

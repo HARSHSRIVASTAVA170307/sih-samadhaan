@@ -9,6 +9,8 @@ const { PORT, FRONTEND_ORIGIN, NODE_ENV } = require('./config');
 const schemesRouter = require('./routes/schemes');
 const resumeRouter = require('./routes/resume');
 const roadmapRouter = require('./routes/roadmap');
+const authRouter = require('./routes/auth');
+const usersService = require('./services/usersService');
 const {
   resumeAnalyzerHealthy,
   roadmapEngineHealthy,
@@ -40,7 +42,9 @@ app.get('/api/health', async (req, res) => {
       backend: true,
       resumeAnalyzer, // true when AI Resume Match Analyzer reports healthy
       roadmapEngine, // true when GROQ_API_KEY is configured
+      auth: true, // signup/login system enabled
     },
+    registeredUsers: usersService.countUsers(),
   });
 });
 
@@ -50,6 +54,7 @@ app.get('/api/health', async (req, res) => {
 app.use('/api/schemes', schemesRouter);
 app.use('/api/resume', resumeRouter);
 app.use('/api/roadmap', roadmapRouter);
+app.use('/api/auth', authRouter.router);
 
 /* 404 for unknown API routes */
 app.use('/api', (req, res) => {

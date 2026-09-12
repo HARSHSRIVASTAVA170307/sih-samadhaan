@@ -175,6 +175,16 @@ backend (Node/Express, :4000)
 | GET | `/api/resume/health` | Analyzer connectivity |
 | POST | `/api/roadmap/clarity` | Rule-based clarity score |
 | POST | `/api/roadmap/generate` | Profile → career decision + roadmap |
+| POST | `/api/auth/signup` | Create account: `fullName, email, password` + optional profile |
+| POST | `/api/auth/login` | Log in (sets httpOnly session cookie, 1 week) |
+| GET | `/api/auth/me` | Current user (`200 {user:null}` when logged out) |
+| POST | `/api/auth/logout` | Clear session |
+
+**Auth implementation notes:** passwords are hashed with salted **scrypt**
+(Node's built-in crypto — never stored in plain text); sessions are random
+32-byte tokens in an **httpOnly** cookie; accounts persist in
+`backend/data/users.json` (gitignored — same JSON-first approach as schemes,
+swappable for a real DB later).
 
 FastAPI docs (when running): http://127.0.0.1:8001/docs
 
