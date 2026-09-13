@@ -132,9 +132,9 @@ export default function App() {
                 <span className="brand-name">SkillSetu</span>
               </div>
               <p>
-                A Smart India Hackathon prototype bridging academia and industry —
-                AI resume analysis, personalized career roadmaps and government
-                welfare schemes, in one student portal.
+                A Smart India Hackathon 2026 prototype by Team Samadhaan, bridging
+                academia and industry — AI resume analysis, personalized career
+                roadmaps and government welfare schemes, in one student portal.
               </p>
             </div>
             <div>
@@ -155,7 +155,7 @@ export default function App() {
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} SkillSetu · Smart India Hackathon prototype</span>
+            <span>© {new Date().getFullYear()} SkillSetu · Smart India Hackathon 2026 · Team Samadhaan</span>
             <span>Built with React · Node.js · FastAPI · Gemini · Groq</span>
           </div>
         </div>

@@ -71,11 +71,11 @@ export default function LandingPage() {
           <div>
             <span className="hero-badge">
               <span className="dot" />
-              Smart India Hackathon 2026 · Working prototype
+              Smart India Hackathon 2026 · Team Samadhaan · Working prototype
             </span>
             <h1>
               Your career, <span className="accent">mapped intelligently</span> —
-              from resume to roadmap to rights.
+              resume to roadmap to rights.
             </h1>
             <p className="hero-sub">
               SkillSetu connects students with industry expectations and government
@@ -92,7 +92,7 @@ export default function LandingPage() {
               </Link>
             </div>
             <p className="hero-note">
-              Free to use · No sign-up required · Built for students, by students
+              Free to use · No sign-up required · Built for students, by students · In service of Digital India
             </p>
           </div>
 
